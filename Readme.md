@@ -29,3 +29,9 @@ PHP   3. Composer\Autoload\ClassLoader->loadClass() .../minimal-example-namespac
 PHP   4. Composer\Autoload\includeFile() .../minimal-example-namespace-collision/vendor/composer/ClassLoader.php:322
 
 ```
+
+## Why do you bother?
+
+The problem is that class `Cumuru\MinimalExample\Main\Bar` might be created **last**. Class
+`Foo` will fatal without any code changes. But only if class `Cumuru\MinimalExample\Main\Bar`
+is loaded before class `Foo`.
